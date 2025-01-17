@@ -1,0 +1,33 @@
+Criptografia simétrica é o tipo de criptografia onde a mesma chave é usada tanto para criptografar quanto para "descriptografar" as informações. Ou seja, a pessoa que envia a mensagem e a pessoa que recebe a mensagem precisam ter a mesma chave secreta para que a comunicação seja segura. Essa chave deve ser mantida em segredo, pois quem souber a chave pode acessar a mensagem.
+
+Exemplo Prático: Imagina que você vai enviar uma mensagem secreta para um amigo e ambos têm uma chave compartilhada chamada "senha123". Quando você envia a mensagem, você usa essa chave para criptografar (embaralhar) a mensagem. Quando o seu amigo recebe a mensagem, ele usa a mesma chave para descriptografá-la (desembaralhar e recuperar a mensagem original).
+
+Vantagens: Rápida, porque o algoritmo usado para criptografar e descriptografar é simples e eficiente.
+Ideal para grandes volumes de dados, já que a criptografia e a descriptografia são rápidas.
+
+A maior desvantagem é que a chave secreta precisa ser compartilhada de maneira segura. Se um atacante conseguir interceptar essa chave, ele pode descriptografar as mensagens.
+
+
+A criptografia assimétrica é um pouco mais complicada, mas muito mais segura. Ela usa duas chaves diferentes: uma chave pública e uma chave privada. A chave pública é usada para criptografar os dados, e a chave privada é usada para "descriptografá-los". A chave pública pode ser compartilhada com qualquer pessoa, mas a chave privada deve ser mantida em segredo.
+
+Exemplo Prático: Digamos que você quer enviar uma mensagem secreta para o seu amigo. Você tem duas chaves: uma pública e uma privada. O seu amigo te dá a chave pública dele, e você usa essa chave para criptografar a mensagem. Quando ele recebe a mensagem, ele usa a chave privada dele para descriptografá-la e ler a mensagem. Apenas ele pode descriptografar a mensagem, porque somente ele tem a chave privada.
+
+Vantagens:
+A chave privada nunca precisa ser compartilhada. Isso torna a comunicação mais segura.
+Mesmo que alguém tenha acesso à chave pública, isso não é suficiente para descriptografar a mensagem, tornando o sistema mais seguro.
+
+Desvantagens: A criptografia assimétrica é mais lenta do que a simétrica. Isso se deve à complexidade dos cálculos envolvidos.
+Vulnerabilidades em Aplicações Web:
+
+As aplicações web, muitas vezes, têm falhas de segurança que podem ser exploradas por hackers. Algumas das vulnerabilidades mais comuns são:
+
+1 - SQL Injection: Um ataque em que o hacker insere código SQL malicioso em um campo de entrada de um formulário (por exemplo, campo de login). O objetivo é manipular o banco de dados para obter, modificar ou excluir dados.
+Exemplo: Se uma aplicação permite inserir um nome de usuário sem validação adequada, um hacker pode digitar admin' OR '1'='1 para contornar a autenticação e acessar o sistema como administrador.
+2 - Cross-Site Scripting (XSS): XSS ocorre quando um atacante injeta scripts JavaScript maliciosos em uma página da web, que são executados no navegador do usuário. Isso pode roubar cookies, redirecionar o usuário ou até fazer ações em nome dele.
+Exemplo: Se um site não filtra corretamente os dados enviados pelo usuário, um atacante pode inserir um script que rouba informações de login.
+3 - Cross-Site Request Forgery (CSRF): CSRF acontece quando um usuário autenticado em um site é induzido a executar ações indesejadas, como mudar sua senha ou fazer uma transferência bancária, sem saber.
+Exemplo: Se o atacante enviar um link malicioso para o usuário, e ele estiver logado no banco online, o link pode fazer com que uma transferência seja realizada sem o consentimento do usuário.
+4 - Injeção de Comandos: O atacante insere comandos do sistema operacional em campos de entrada da aplicação, que são executados no servidor.
+Exemplo: Em vez de inserir um nome de usuário, o atacante insere um comando do tipo ; rm -rf /, que pode apagar dados no servidor.
+5 - Falta de Validação de Entrada: Quando a aplicação não valida corretamente o que o usuário está inserindo, permitindo que dados maliciosos sejam processados.
+Exemplo: Se um site permite que um usuário insira dados diretamente em um campo de busca sem validar o tipo de entrada, ele pode ser vulnerável a XSS ou SQL Injection.
